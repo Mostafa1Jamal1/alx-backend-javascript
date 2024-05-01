@@ -1,4 +1,4 @@
-export default function cleanSet(set, startString) { 
+export default function cleanSet(set, startString) {
   const cleanArray = [];
   if (startString === '' || typeof startString !== 'string') {
     return '';
@@ -8,7 +8,9 @@ export default function cleanSet(set, startString) {
       if (item.startsWith(startString)) {
         cleanArray.push(item.substring(startString.length));
       }
-    } catch (e) {}
+    } catch (e) {
+    /* tslint:disable:no-empty */
+    }
   });
   return cleanArray.join('-');
 }
