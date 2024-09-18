@@ -4,7 +4,7 @@ const path = require('path');
 
 async function countStudents(localPath) {
   const fullPath = path.resolve(localPath);
-  let output = 'This is the list of our students\n';
+  let output = '';
   try {
     const data = await fs.promises.readFile(fullPath, 'utf8');
     const lines = data.split('\n');
@@ -40,6 +40,7 @@ const app = http.createServer((req, res) => {
       res.end('Hello Holberton School!');
       break;
     case '/students':
+      res.write('This is the list of our students\n');
       countStudents(filePath)
         .then((data) => {
           res.end(data);
