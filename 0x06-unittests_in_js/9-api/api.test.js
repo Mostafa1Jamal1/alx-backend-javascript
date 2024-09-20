@@ -32,4 +32,18 @@ describe('Cart page', () => {
             done();
         });
     });
+
+    it('should return 200 when id is a float', (done) => {
+        request('http://localhost:7865/cart/1.23', (error, response, body) => {
+            expect(response.statusCode).to.equal(200);
+            done();
+        });
+    });
+
+    it('should return 404 when no id', (done) => {
+        request('http://localhost:7865/cart/', (error, response, body) => {
+            expect(response.statusCode).to.equal(404);
+            done();
+        });
+    });
 })
