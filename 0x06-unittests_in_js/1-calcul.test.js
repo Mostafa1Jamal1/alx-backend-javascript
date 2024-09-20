@@ -62,4 +62,7 @@ describe('calculateNumber with type DIVIDE', () => {
     it('should return the difference between 6.4999999 and 3.4999999 equal 2', () => {
         assert.strictEqual(calculateNumber('DIVIDE', 6.4999999, 3), 2);
     });
+    it('should return Error when we try to divide 6.4999999 by 0.4999999', () => {
+        assert.strictEqual(calculateNumber('DIVIDE', 6.4999999, 0.4999999), 'Error');
+    });
 });
