@@ -14,4 +14,7 @@ describe('calculateNumber', () => {
   it('should return the sum of 1.5 and 3.7 equal 6', () => {
     assert.strictEqual(calculateNumber(1.5, 3.7), 6);
   });
+  it('should return the sum of 1.999999 and 3.7 equal 6', () => {
+    assert.strictEqual(calculateNumber(1.999999, 3.7), 6);
+  });
 });
