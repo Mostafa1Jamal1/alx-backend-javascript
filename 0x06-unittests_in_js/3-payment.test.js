@@ -3,7 +3,7 @@ const expect = chai.expect;
 const sinon = require('sinon');
 const sendPaymentRequestToApi = require('./3-payment.js');
 const Utils = require('./utils.js');
-console.log(sendPaymentRequestToApi);
+
 describe('sendPaymentRequestToApi', () => {
     it('should call calculateNumber with type SUM', () => {
         const spy = sinon.spy(Utils, 'calculateNumber');
